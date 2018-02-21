@@ -44,7 +44,7 @@ const getV2rayRocketQR = async(ctx) => {
     ctx.response.type = 'text/plain; charset=utf-8';
     RowJson = await one.fileRead(path);
     // let security = RowJson.inbound.settings.clients[0].security;
-    let security = 'aes-128-cfb';
+    let security = 'chacha20-poly1305';
     let uuid = RowJson.inbound.settings.clients[0].id;
     // let ipAddress = ''
     let ipAddress =  await publicIp.v4()
